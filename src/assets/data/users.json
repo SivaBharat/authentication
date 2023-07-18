@@ -6,7 +6,7 @@
       "email": "siva@gmail.com",
       "password": "Siva@1234",
       "role": "user",
-      "isLogged": true,
+      "isLogged": false,
       "id": 1
     },
     {
@@ -22,15 +22,45 @@
   "session": [
     {
       "email": "siva@gmail.com",
+      "role": "admin",
+      "userId": 2,
+      "id": 2
+    },
+    {
+      "email": "siva@gmail.com",
       "role": "user",
       "userId": 1,
-      "id": 1
+      "id": 3
+    },
+    {
+      "email": "siva@gmail.com",
+      "role": "user",
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "email": "siva@gmail.com",
+      "role": "user",
+      "userId": 1,
+      "id": 5
     },
     {
       "email": "siva@gmail.com",
       "role": "admin",
       "userId": 2,
-      "id": 2
+      "id": 6
+    },
+    {
+      "email": "siva@gmail.com",
+      "role": "admin",
+      "userId": 2,
+      "id": 7
+    },
+    {
+      "email": "siva@gmail.com",
+      "role": "user",
+      "userId": 1,
+      "id": 8
     }
   ],
   "tasks": []

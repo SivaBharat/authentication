@@ -17,8 +17,8 @@ export class SignupComponent implements OnInit {
   lastname!: FormControl;
   email!: FormControl;
   password!: FormControl;
-  confirmpassword!: FormControl
-  schenter!: FormControl
+  confirmpassword!: FormControl;
+  schenter!: FormControl;
 
   modalToggle: string = 'false';
 

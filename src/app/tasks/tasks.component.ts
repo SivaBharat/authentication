@@ -51,7 +51,7 @@ export class TasksComponent implements OnInit {
         this.taskData = res;
         if(res.length<1){
           this.noTasks=true;
-          // alert("No tasks found");
+
         }
       });
 
