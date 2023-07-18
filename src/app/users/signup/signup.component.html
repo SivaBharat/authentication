@@ -1,0 +1,133 @@
+<div class="card shadow my-5 col-md-12 col-lg-4 offset-lg-4 flex justify-content-center">
+    <p-card id="login-card" header="SignUp">
+        <form [formGroup]="signup" no-validate>
+            <!-- firstname -->
+            <div class="form-Group mb-3">
+                <input type="text" class="form-control" formControlName="firstname" [ngClass]="{'is-invalid':firstname.errors && (firstname.touched||firstname.dirty),
+        'is-valid':firstname.valid}" placeholder="First Name">
+
+                <div class="invalid-feedback">
+                    <strong *ngIf="firstname.errors?.['required']">Firstname is Required</strong>
+                    <strong *ngIf="firstname.errors?.['minlength']">Must be 3 characters long</strong>
+                    <strong *ngIf="firstname.errors?.['maxlength']">Must Not Exceed 20 characters</strong>
+                    <strong *ngIf="firstname.errors?.['pattern']">Must Contain only Alphabets</strong>
+                </div>
+            </div>
+
+            <!-- lastname -->
+            <div class="form-Group mb-3">
+                <input type="text" class="form-control" formControlName="lastname" [ngClass]="{'is-invalid':lastname.errors && (lastname.touched||lastname.dirty),
+        'is-valid':lastname.valid}" placeholder="Last Name">
+
+                <div class="invalid-feedback">
+                    <strong *ngIf="lastname.errors?.['required']">lastname is Required</strong>
+                    <strong *ngIf="lastname.errors?.['minlength']">Must be 3 characters long</strong>
+                    <strong *ngIf="lastname.errors?.['maxlength']">Must Not Exceed 20 characters</strong>
+                    <strong *ngIf="lastname.errors?.['pattern']">Must Contain only Alphabets</strong>
+                </div>
+            </div>
+
+            <!-- email -->
+            <div class="form-Group mb-3">
+                <input type="email" class="form-control" formControlName="email" [ngClass]="{'is-invalid':email.errors && (email.touched||email.dirty),
+        'is-valid':email.valid}" placeholder="email">
+
+                <div class="invalid-feedback">
+                    <strong *ngIf="email.errors?.['required']">Email is Required</strong>
+                    <strong *ngIf="email.errors?.['email']">Enter a Valid Email</strong>
+
+                </div>
+            </div>
+
+            <!-- radio button -->
+
+            <div class="d-flex justify-content-center align-items-center form-Group">
+
+                <span class="my-4">
+                    <input class="radio" value="user" name="schenter" formControlName="schenter" type="radio" [ngClass]="{'is-invalid':schenter.errors && (schenter.touched||schenter.dirty),
+                  'is-valid':schenter.valid}" id="sc">
+                    <label class=" me-5 text-black" for="sc">
+                        User
+                    </label>
+                </span>
+
+                <span>
+                    <input class="radio " [ngClass]="{'is-invalid':schenter.errors && (schenter.touched||schenter.dirty),
+                  'is-valid':schenter.valid}" value="admin" name="schenter" formControlName="schenter" type="radio"
+                        id="ep">
+                    <label for="ep" class=" text-black fw-bold">
+                        Admin
+                    </label>
+                </span>
+
+                <div class="invalid-feedback">
+                    <strong *ngIf="schenter.errors?.['required']">Please Choose One</strong>
+                </div>
+            </div>
+
+            <!--password-->
+            <div class="form-Group mb-3">
+                <input type="password" class="form-control" formControlName="password" [ngClass]="{'is-invalid':password.errors && (password.touched||password.dirty),
+        'is-valid':password.valid}" placeholder="password">
+
+                <div class="invalid-feedback">
+                    <strong *ngIf="password.errors?.['required']">Please Enter A Password</strong>
+                    <strong *ngIf="password.errors?.['minlength']">Too Small,8 Characters Please</strong>
+                    
+                </div>
+            </div>
+
+            <!--Confirm password-->
+            <div class="form-Group mb-3">
+                <input type="password" class="form-control" formControlName="confirmpassword" [ngClass]="{'is-invalid':(confirmpassword.errors) && (confirmpassword.touched||confirmpassword.dirty),
+        'is-valid':confirmpassword.valid}" placeholder="Confirm Password">
+
+                <div class="invalid-feedback">
+                    <strong>confirm password is Required</strong>
+                    <strong>Passwords Should Match</strong>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="col-12 text-white btn btn-success" (click)="onSubmit()"
+                    [disabled]="signup.invalid" type="submit">Register</button>
+            </div>
+        </form>
+        <label class="text-black my-3 col-lg-7 col-md-6 offset-md-4 offset-lg-3">Already have an account?<a
+                class="text-decoration-none text-dark" routerLink="/signin">Login!</a></label>
+    </p-card>
+</div>
+
+
+<div class="modal" [style.display]="modalToggle" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Admin Verification</h5>
+          <button type="button" class="btn-close" (click)="modalToggle='none '" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <h6>Enter the Magic Keyword</h6>
+            <form #admin="ngForm" (ngSubmit)="admin.form.valid && adminVerification()" novalidate>
+                <div class="form-group mb-3">
+                    <input [(ngModel)]="obj.keyword" #Keyword="ngModel" type="text" name="Keyword" class="form-control"
+                        placeholder="Keyword" [ngClass]="{'is-invalid':admin.submitted && Keyword.invalid}" required>
+    
+                    <div class="invalid-feedback" *ngIf="admin.invalid">
+                        <p *ngIf="Keyword.errors?.['required']">
+                            The keyword is required
+                        </p>
+    
+    
+    
+                    </div>
+                </div>
+    
+            
+    
+                <button type="submit" class="bg-dark text-white col-lg-12 col-sm-12">Verify</button>
+            </form>
+        </div>
+      
+      </div>
+    </div>
+  </div>

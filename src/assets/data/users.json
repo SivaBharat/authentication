@@ -1,0 +1,37 @@
+{
+  "users": [
+    {
+      "firstName": "Siva",
+      "lastName": "Bharath",
+      "email": "siva@gmail.com",
+      "password": "Siva@1234",
+      "role": "user",
+      "isLogged": true,
+      "id": 1
+    },
+    {
+      "firstName": "Siva",
+      "lastName": "Bharath",
+      "email": "siva@gmail.com",
+      "password": "Siva@12345",
+      "role": "admin",
+      "isLogged": true,
+      "id": 2
+    }
+  ],
+  "session": [
+    {
+      "email": "siva@gmail.com",
+      "role": "user",
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "email": "siva@gmail.com",
+      "role": "admin",
+      "userId": 2,
+      "id": 2
+    }
+  ],
+  "tasks": []
+}

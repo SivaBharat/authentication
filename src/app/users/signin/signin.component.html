@@ -1,0 +1,41 @@
+<div class="container my-5 shadow-sm">
+    <div class="card col-lg-4 col-md-12 shadow-sm offset-lg-4 flex justify-content-center p">
+        <p-card id="login-card" header="Login">
+            <form #signin="ngForm" (ngSubmit)="signin.form.valid && onSubmit()" novalidate>
+                <div class="form-group mb-3">
+                    <input [(ngModel)]="obj.email" #email="ngModel" type="email" name="email" class="form-control"
+                        placeholder="Email" [ngClass]="{'is-invalid':signin.submitted && email.invalid}" required>
+    
+                    <div class="invalid-feedback" *ngIf="signin.submitted && email.invalid">
+                        <p *ngIf="email.errors?.['required']">
+                            The Email is required
+                        </p>
+    
+    
+    
+                    </div>
+                </div>
+    
+                <div class="form-group mb-3">
+                    <input class="form-control" required [(ngModel)]="obj.password" #password="ngModel" type="password"
+                        name="password" placeholder="password"
+                        [ngClass]="{'is-invalid':signin.submitted && password.invalid}">
+    
+                    <div class="invalid-feedback" *ngIf="signin.submitted && password.invalid ">
+                        <p *ngIf="password.errors?.['required']">
+                            The Password is required
+                        </p>
+                    </div>
+                </div>
+    
+                <button type="submit" class="btn btn-success col-lg-12 col-sm-12 text-white">Login</button>
+            </form>
+    
+    
+            <div class="text-center mt-5">
+               <small> <span class="text-secondary text-dark" >No Account? &nbsp;<a class="text-secondary text-decoration-none text-dark" routerLink="/register">Register Now</a></span>
+               </small>
+            </div>
+        </p-card>
+    </div>
+    </div>
