@@ -5,5 +5,6 @@ export interface taskAssignment{
     assignedDate:string;
     dueDate:string;
     status:string;
-    userName:string
+    userName:string;
+    assignedBy:string;
 }

@@ -11,5 +11,6 @@ export interface usersData{
 export interface sessionData{
     email:string;
     role:string;
-    userId:number
+    userId:number;
+    firstName:string;
 }

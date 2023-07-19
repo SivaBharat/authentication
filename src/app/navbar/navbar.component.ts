@@ -14,7 +14,7 @@ export class NavbarComponent implements OnInit {
   adminOps: boolean = false;
   userId: number = 0
 
-  constructor(private user: UsersService,private route:Router) { }
+  constructor(private user: UsersService, private route: Router) { }
   ngOnInit(): void {
     this.user.authSubject.subscribe((res) => {
       this.isActive = res;

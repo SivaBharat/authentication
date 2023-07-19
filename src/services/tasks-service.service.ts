@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { taskAssignment } from 'src/models/tasks';
+import { taskAssignment} from 'src/models/tasks';
 import { HttpClient } from '@angular/common/http';
 import { environments } from 'src/environments/environments';
 @Injectable({
@@ -10,7 +10,7 @@ export class TasksServiceService {
   constructor(private http: HttpClient) { }
 
   tasksApi = environments.tasksApi;
-  usersApi = environments.usersApi;
+
 
   getTasks(id: string | null) {
     if (id === '0') {
@@ -30,15 +30,15 @@ export class TasksServiceService {
     return this.http.delete(deleteUrl).subscribe();
   }
 
-  getSingleTask(taskId: number) {
-    const singleTaskUrl = this.tasksApi + '/' + taskId;
+  getSingleTask(taskId:number){
+    const singleTaskUrl=this.tasksApi+'/'+taskId;
     return this.http.get<taskAssignment[]>(singleTaskUrl);
 
   }
 
-  putSingleTask(taskDetails: taskAssignment) { 
-    const putSingleTaskUrl = this.tasksApi + '/' + taskDetails.id;
-    return this.http.put(putSingleTaskUrl, taskDetails).subscribe();
+  putSingleTask(taskDetails:taskAssignment){
+    const putSingleTaskUrl=this.tasksApi+'/'+taskDetails.id;
+    return this.http.put(putSingleTaskUrl,taskDetails).subscribe();
 
   }
 

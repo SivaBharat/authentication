@@ -13,9 +13,9 @@
       "firstName": "Siva",
       "lastName": "Bharath",
       "email": "siva@gmail.com",
-      "password": "Siva@12345",
+      "password": "Siva!1234",
       "role": "admin",
-      "isLogged": true,
+      "isLogged": false,
       "id": 2
     }
   ],
@@ -24,43 +24,15 @@
       "email": "siva@gmail.com",
       "role": "admin",
       "userId": 2,
+      "firstName": "Siva",
       "id": 2
     },
     {
       "email": "siva@gmail.com",
       "role": "user",
       "userId": 1,
+      "firstName": "Siva",
       "id": 3
-    },
-    {
-      "email": "siva@gmail.com",
-      "role": "user",
-      "userId": 1,
-      "id": 4
-    },
-    {
-      "email": "siva@gmail.com",
-      "role": "user",
-      "userId": 1,
-      "id": 5
-    },
-    {
-      "email": "siva@gmail.com",
-      "role": "admin",
-      "userId": 2,
-      "id": 6
-    },
-    {
-      "email": "siva@gmail.com",
-      "role": "admin",
-      "userId": 2,
-      "id": 7
-    },
-    {
-      "email": "siva@gmail.com",
-      "role": "user",
-      "userId": 1,
-      "id": 8
     }
   ],
   "tasks": []

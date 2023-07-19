@@ -14,7 +14,8 @@ export class SigninComponent implements OnInit {
   sessionInfo:sessionData={
     email: '',
     role: '',
-    userId: 0
+    userId: 0,
+    firstName: ''
   };
 
   constructor(private user:UsersService,private route:Router){}
@@ -30,7 +31,8 @@ this.user.getUserData().subscribe((res)=>{
       console.log(user1);
       this.sessionInfo.email=user1.email;
       this.sessionInfo.role=user1.role;
-      this.sessionInfo.userId=user1.id
+      this.sessionInfo.userId=user1.id;
+      this.sessionInfo.firstName=user1.firstName;
       this.user.updateIsloggedIn(user1,user1.id)
       this.user.postSessionInfo(this.sessionInfo);
       this.user.validateAuth(true);
