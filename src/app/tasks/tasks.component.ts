@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute} from '@angular/router';
 import { TasksServiceService } from 'src/services/tasks-service.service';
 import { taskAssignment } from 'src/models/tasks';
 import { UsersService } from 'src/services/users.service';
@@ -25,6 +25,7 @@ export class TasksComponent implements OnInit {
     assignedBy: '',
   };
   assignedDate!: string;
+
   todayDate = '08/20/2023';
   adminOps: boolean = false;
 
@@ -67,6 +68,10 @@ export class TasksComponent implements OnInit {
           this.taskDetails.assignedBy = data[0].firstName;
         }
       }
+      this.todayDate=new Date().toLocaleDateString();
+      this.taskDetails.assignedDate=this.todayDate;
+     
+      console.log(this.todayDate)
     });
 
     this.userId = this.actroute.snapshot.paramMap.get('id');
@@ -141,7 +146,9 @@ export class TasksComponent implements OnInit {
   }
 
   adminEdit(item:taskAssignment){
-    console.log(item);
-
+    this.taskDetails=item;
+  };
+  adminEditPut(){
+    this.taskservice.putAdminUpdate(this.taskDetails,this.taskDetails.id);
   }
 }

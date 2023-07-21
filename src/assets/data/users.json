@@ -10,12 +10,12 @@
       "id": 1
     },
     {
-      "firstName": "Siva",
-      "lastName": "Bharath",
-      "email": "siva@gmail.com",
-      "password": "Siva!1234",
+      "firstName": "Karthi",
+      "lastName": "Keyan",
+      "email": "karthi@gmail.com",
+      "password": "Karthi@123",
       "role": "admin",
-      "isLogged": false,
+      "isLogged": true,
       "id": 2
     }
   ],
@@ -33,7 +33,53 @@
       "userId": 1,
       "firstName": "Siva",
       "id": 3
+    },
+    {
+      "email": "siva@gmail.com",
+      "role": "user",
+      "userId": 1,
+      "firstName": "Siva",
+      "id": 4
+    },
+    {
+      "email": "siva@gmail.com",
+      "role": "user",
+      "userId": 1,
+      "firstName": "Siva",
+      "id": 5
+    },
+    {
+      "email": "karthi@gmail.com",
+      "role": "admin",
+      "userId": 2,
+      "firstName": "Karthi",
+      "id": 6
+    },
+    {
+      "email": "karthi@gmail.com",
+      "role": "admin",
+      "userId": 2,
+      "firstName": "Karthi",
+      "id": 7
+    },
+    {
+      "email": "karthi@gmail.com",
+      "role": "admin",
+      "userId": 2,
+      "firstName": "Karthi",
+      "id": 8
     }
   ],
-  "tasks": []
+  "tasks": [
+    {
+      "userid": 1,
+      "title": "signin",
+      "id": 1,
+      "assignedDate": "7/21/2023",
+      "dueDate": "2023-07-22",
+      "userName": "Siva",
+      "status": "assigned",
+      "assignedBy": "Siva"
+    }
+  ]
 }

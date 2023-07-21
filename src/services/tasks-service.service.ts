@@ -42,5 +42,14 @@ export class TasksServiceService {
 
   }
 
+  putAdminUpdate(item:taskAssignment,id:number){
+    const putSingleTaskUrl=this.tasksApi+'/'+id;
+console.log(item,id);
+return this.http.put(putSingleTaskUrl,item).subscribe((res)=>{
+  
+});
+
+  }
+
 
 }

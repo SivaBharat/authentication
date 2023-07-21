@@ -12,9 +12,9 @@ export class NavbarComponent implements OnInit {
   isActive: boolean = false;
   activeUserId: number = 0;
   adminOps: boolean = false;
-  userId: number = 0
+  userId: number = 0;
 
-  constructor(private user: UsersService, private route: Router) { }
+  constructor(private user: UsersService,private route:Router) { }
   ngOnInit(): void {
     this.user.authSubject.subscribe((res) => {
       this.isActive = res;
@@ -30,7 +30,7 @@ export class NavbarComponent implements OnInit {
         }
 
         else {
-          this.userId = data[0].userId
+          this.userId = data[0].userId;
         }
       }
     })

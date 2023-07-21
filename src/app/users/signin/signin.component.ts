@@ -3,6 +3,7 @@ import { UsersService } from 'src/services/users.service';
 import { usersData } from 'src/models/users';
 import { sessionData } from 'src/models/users';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -33,22 +34,23 @@ this.user.getUserData().subscribe((res)=>{
       this.sessionInfo.role=user1.role;
       this.sessionInfo.userId=user1.id;
       this.sessionInfo.firstName=user1.firstName;
-      this.user.updateIsloggedIn(user1,user1.id)
+      this.user.updateIsloggedIn(user1,user1.id);
       this.user.postSessionInfo(this.sessionInfo);
       this.user.validateAuth(true);
       this.route.navigate(['/']);
-
-      return
+      Swal.fire({
+        icon: 'success',
+        title: `Logged Successfully!!!`,
+        timer: 3000,
+      });
+      return;
     }    
   }
-
-  alert('login failed')
-
-   
-
-
-
-
+  Swal.fire({
+    icon: 'error',
+    title: `invalid username or password!!!`,
+    timer: 3000,
+  }); 
 })
   }
 }
@@ -57,4 +59,5 @@ class signin_Credentials {
   email!: string;
   password!: string;
 }
+
 

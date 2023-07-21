@@ -5,6 +5,7 @@ import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { usersData } from 'src/models/users';
 import { UsersService } from 'src/services/users.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -19,7 +20,6 @@ export class SignupComponent implements OnInit {
   password!: FormControl;
   confirmpassword!: FormControl;
   schenter!: FormControl;
-
   modalToggle: string = 'false';
 
   obj = new admin();
@@ -39,9 +39,9 @@ export class SignupComponent implements OnInit {
     Validators.maxLength(20),
     Validators.minLength(3)
     ]);
-    this.email = new FormControl('', [Validators.required, Validators.email])//pattern
-    this.password = new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{8,}$')]),//pattern
-      this.confirmpassword = new FormControl('', [Validators.required])
+    this.email = new FormControl('', [Validators.required, Validators.email]);
+    this.password = new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{8,}$')]);
+    this.confirmpassword = new FormControl('', [Validators.required]);
     this.schenter = new FormControl('', [Validators.required]);
 
 
@@ -61,7 +61,7 @@ export class SignupComponent implements OnInit {
 
   }
 
-  
+ 
   userInfo: usersData =
     {
       firstName: '',
@@ -80,6 +80,11 @@ export class SignupComponent implements OnInit {
       this.userInfo.role = this.schenter.value;
       this.userInfo.password = this.password.value;
       this.user.postUserData(this.userInfo);
+      Swal.fire({
+        icon: 'success',
+        title: `Registered Successfully!!!`,
+        timer: 3000,
+      });
     }
 
 
