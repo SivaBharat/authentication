@@ -109,7 +109,7 @@ export class SignupComponent implements OnInit {
     }
 
     else{
-      alert("You are not authorized for access")
+      alert("You are not authorized for access");
     }
   }
 }

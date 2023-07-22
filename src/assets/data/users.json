@@ -15,7 +15,7 @@
       "email": "karthi@gmail.com",
       "password": "Karthi@123",
       "role": "admin",
-      "isLogged": true,
+      "isLogged": false,
       "id": 2
     }
   ],
@@ -68,15 +68,36 @@
       "userId": 2,
       "firstName": "Karthi",
       "id": 8
+    },
+    {
+      "email": "siva@gmail.com",
+      "role": "user",
+      "userId": 1,
+      "firstName": "Siva",
+      "id": 9
+    },
+    {
+      "email": "siva@gmail.com",
+      "role": "user",
+      "userId": 1,
+      "firstName": "Siva",
+      "id": 10
+    },
+    {
+      "email": "karthi@gmail.com",
+      "role": "admin",
+      "userId": 2,
+      "firstName": "Karthi",
+      "id": 11
     }
   ],
   "tasks": [
     {
       "userid": 1,
-      "title": "signin",
+      "title": "signin page",
       "id": 1,
-      "assignedDate": "7/21/2023",
-      "dueDate": "2023-07-22",
+      "assignedDate": "7/22/2023",
+      "dueDate": "2023-07-24",
       "userName": "Siva",
       "status": "assigned",
       "assignedBy": "Siva"

@@ -52,7 +52,6 @@ export class TasksComponent implements OnInit {
       (this.sortingParam = 'status'), (this.sortingDirection = 'Done');
     }
   }
-
   constructor(
     private actroute: ActivatedRoute,
     private taskservice: TasksServiceService,
@@ -69,9 +68,8 @@ export class TasksComponent implements OnInit {
         }
       }
       this.todayDate=new Date().toLocaleDateString();
-      this.taskDetails.assignedDate=this.todayDate;
-     
-      console.log(this.todayDate)
+      this.taskDetails.assignedDate=this.todayDate;     
+      console.log(this.todayDate);
     });
 
     this.userId = this.actroute.snapshot.paramMap.get('id');
@@ -79,7 +77,7 @@ export class TasksComponent implements OnInit {
       this.taskData = res;
       if (res.length < 1) {
         this.noTasks = true;
-        // alert("No tasks found");
+        
       }
     });
 
@@ -101,7 +99,7 @@ export class TasksComponent implements OnInit {
     const milliSec = 24 * 60 * 60 * 1000;
     return Math.round(Math.abs(Number(deadlin) - Number(iniDate)) / milliSec);
   }
-  // task process
+  
   setUserId() {
     this.userserv.getUserId(this.taskDetails.userName).subscribe((res) => {
       this.taskDetails.userid = res[0].id;
@@ -110,7 +108,6 @@ export class TasksComponent implements OnInit {
 
   onSubmit() {
     this.taskservice.postTasks(this.taskDetails);
-    // window.location.reload();
     alert(`New Task Added Successfully`);
     this.ngOnInit();
   }
